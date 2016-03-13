@@ -7,12 +7,17 @@ package agenda;
 
 /**
  *
- * @author MotherFoquita
+ * @author aparracorbacho
+ * @version 1.0
  */
 public class Contacto {
+    //Atributos usado para los contactos
     Utils util = new Utils();
     String nombre, apellido, email;
     int numero;
+    /**
+     * Agregamos un contacto preguntando el usuario los campos
+     */
     Contacto(){
         util.imprime("Introduce el nombre");
         this.nombre = util.qstring();
@@ -24,6 +29,9 @@ public class Contacto {
         this.numero = util.qint();
        
     }
+    /**
+     * Usamos este para agregar los uaurios de prueba al inicio
+     */
     Contacto(String nombre, String apellido, String email, int numero){
         this.nombre = nombre;
         this.apellido = apellido;

@@ -9,24 +9,35 @@ import java.util.ArrayList;
 
 /**
  *
- * @author MotherFoquita
+ * @author aparracorbacho
+ * @version 1.0
  */
 public class Gestion {
+    //Atributos usados en gestion y creacion del arraylist 
     ArrayList<Contacto> contactos = new ArrayList<>();
     Utils util = new Utils();
     int salir = 0;
     int osalir = 0;
     
-    
+     /**
+     * Agregamos un contacto a la agenda
+     */
     public void agregar(){
         contactos.add(new Contacto());
     }
+    /**
+     * Recorremos el arraylist para mostrarlo
+     */
     public void ver(){
         for (int i=0;i<contactos.size();i++){
         util.imprime(" Nombre: "+contactos.get(i).nombre+" Apellido: "+contactos.get(i).apellido+" Email: "+contactos.get(i).email+" Numero: "+contactos.get(i).numero);      
         }      
     }
     
+    /**
+     * Pregunta al usuario que contacto quiere borrar
+     * Recorre el arraylisty lo borra
+     */
     public void eliminar(){
         util.imprime("Que contacto quieres eliminar? Indica el nombre");
         String bnombre = util.qstring();
@@ -37,9 +48,15 @@ public class Gestion {
                  util.imprime("Contacto borrado");
                 }
          }
+         //Si no hay ningun contacto que coincida con la busqueda lanza un error
         if (contador ==0) { util.imprime("El contacto que quieres buscar no existe"); }
     }
-   
+    
+    /**
+     * Pregunta al usuario que contacto quiere buscar
+     * Recorre el arraylist y lo muestra
+     */
+    
      public void buscar(){
         util.imprime("Que contacto quieres buscar? Indica el nombre");
         String bnombre = util.qstring();
@@ -50,8 +67,14 @@ public class Gestion {
                  contador++;
                 }
          }
+         //Si no hay ningun contacto que coincida con la busqueda lanza un error
          if (contador ==0) { util.imprime("El contacto que quieres buscar no existe"); }
     }
+     
+     /**
+     * Muestra el menu de la agenda
+     * @param opcion es lo que usamos para gestionar el menu
+     */
     public void menu(){
     do{
     tmenu();
@@ -90,10 +113,15 @@ public class Gestion {
     }while (salir==0);
     }
     
-    
+    /**
+     * Texto del menu principal
+     */
     public void tmenu(){
          util.imprime("  Quieres ver la lista de contactos? (Opcion 1)\n  Quieres agregar un contacto? (Opcion 2)\n  Quieres eliminar un contacto? (Opcion 3)\n  Quieres buscar los datos de un contacto? (Opcion 4)\n  Quieres salir de la agenda (Opcion 0)");
     }
+    /**
+     * Al final de cada accion usaremos este metodo para preguntar al usuario si quiere salir o quiere ver el menu
+     */
     public void pmenu(){
         util.imprime("Quieres ver el menu (Opcion 1) o salir de la agenda? (Opcion 2)");
         int omenu = util.qint();
@@ -115,6 +143,9 @@ public class Gestion {
    }
     
     
+    /**
+     * Usamos este metodo para agregar usuarios de prueba
+     */
     
     public void agregarp(){
         // Agregamos contactos de prueba para tener en la agenda

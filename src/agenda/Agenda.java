@@ -8,13 +8,12 @@ package agenda;
 
 /**
  *
- * @author MotherFoquita
+ * @author aparracorbacho
+ * @version 1.0
  */
 public class Agenda {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         // TODO code application logic here
         Utils util = new Utils();
@@ -22,7 +21,9 @@ public class Agenda {
         
         util.imprime("Bienvenido a tu libreta de contactos\nIntroduce tu nombre");
         String nagenda = util.qstring();
+        //Agregamos los usuarios de prueba 
         gestion.agregarp();
+        //Lanzamos el menu de la agenda
         gestion.menu();
         
     }
