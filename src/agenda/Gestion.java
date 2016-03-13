@@ -98,11 +98,9 @@ public class Gestion {
                 buscar();
                 pmenu();
                 break;
-            case 5:
-                
-                break;
             case 0:
-                
+                salir = 1;
+                util.imprime("Gracias por usar la agenda.\nAdios!");
                 break;
             default:     
                 util.imprime("No es una opcion valida, vuelve a probar");
